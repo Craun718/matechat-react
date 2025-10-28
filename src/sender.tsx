@@ -10,7 +10,6 @@ import type { Backend } from "./utils";
 export interface InputCountProps extends React.ComponentProps<"span"> {
   count: number;
   limit: number;
-  className: string;
 }
 
 export function InputCount({
@@ -57,7 +56,7 @@ export function SenderButton({
       data-slot="sender-button"
       className={twMerge(
         clsx(
-          "flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-500/90 text-white",
+          "flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-500/90 text-white cursor-pointer",
           className,
         ),
       )}
@@ -65,7 +64,7 @@ export function SenderButton({
     >
       {icon ?? (
         <img
-          className="filter brightness-0 invert"
+          className="filter !brightness-0 invert"
           src={isSending ? QuickStop : PublishNew}
           alt={isSending ? "icon-quick-stop" : "icon-publish-new"}
         />
@@ -107,6 +106,7 @@ export interface SenderProps extends React.ComponentProps<"div"> {
   onSend?: (controller: AbortController) => void;
   toolbar?: React.ReactNode;
 }
+
 export function Sender({
   className,
   initialMessage = "",
@@ -180,7 +180,9 @@ export function Sender({
       data-slot="sender"
       className={twMerge(
         clsx(
-          "flex flex-col items-center border border-gray-200 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500",
+          "px-1 flex flex-col items-center border rounded-2xl",
+          "border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md",
+          "focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500",
           className,
         ),
       )}
@@ -192,7 +194,16 @@ export function Sender({
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
-        className="w-full pt-4 px-4 border-0 rounded-2xl resize-none focus:ring-0 focus:outline-none text-gray-700 placeholder-gray-400"
+        className={clsx(
+          "w-full pt-4 px-4 border-0 rounded-2xl !resize-none bg-transparent",
+          "focus:ring-0 focus:outline-none text-gray-700 placeholder-gray-400",
+          "overflow-y-auto max-h-32",
+          "[scrollbar-gutter:stable] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full",
+          "[&::-webkit-scrollbar-thumb]:cursor-auto",
+          "[&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-gray-600",
+          "[&::-webkit-scrollbar-thumb:hover]:bg-gray-400 dark:[&::-webkit-scrollbar-thumb:hover]:bg-gray-500",
+          "[&::-webkit-scrollbar-track]:mt-3",
+        )}
         rows={2}
       />
       <div className="flex items-center w-full px-4 py-2 gap-4">

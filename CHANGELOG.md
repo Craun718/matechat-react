@@ -1,5 +1,68 @@
 # Changelog
 
+## \[0.1.0-rc.4]
+
+### Bug Fixes
+
+- [`b31f68b`](https://github.com/DevCloudFE/matechat-react/commit/b31f68b42392b507712f4aa6c32e2fec867058f6) ([#73](https://github.com/DevCloudFE/matechat-react/pull/73) by [@xx-yoke](https://github.com/DevCloudFE/matechat-react/../../xx-yoke)) Fix max height of sender and optimize scrollbar style.
+
+## \[0.1.0-rc.3]
+
+### Bug Fixes
+
+- [`742dfeb`](https://github.com/DevCloudFE/matechat-react/commit/742dfeb28f4b7b54a6c20f29e952b2dd7517626e) Fix matechat component exports.
+
+## \[0.1.0-rc.2]
+
+### Bug Fixes
+
+- [`9f3c6a9`](https://github.com/DevCloudFE/matechat-react/commit/9f3c6a99bac9fe8e9a7a031cfd6c1ae4e7720603) ([#67](https://github.com/DevCloudFE/matechat-react/pull/67) by [@TMZZ031130](https://github.com/DevCloudFE/matechat-react/../../TMZZ031130)) Fixed the issue that normal list mode cannot be selected.
+
+  Other optimizations:
+
+  - Remove the `className` attribute from the `list`.
+  - Add an id attribute to the li option of the list component.
+
+## \[0.1.0-rc.1]
+
+### New Features
+
+- [`f35b6e9`](https://github.com/DevCloudFE/matechat-react/commit/f35b6e9938d57294445026e59a028e63d616fb19) ([#65](https://github.com/DevCloudFE/matechat-react/pull/65) by [@TMZZ031130](https://github.com/DevCloudFE/matechat-react/../../TMZZ031130)) Refactor `List` component in `list.tsx` to improve code structure and maintainability.
+
+## \[0.1.0-rc.0]
+
+### New Features
+
+- [`421dc74`](https://github.com/DevCloudFE/matechat-react/commit/421dc74f39f24c00801d336dce5fbbdf6830d7f5) Optimize markdown component in `Bubble`, customize link, heading and code. Support copy button for code blocks.
+- [`3869f95`](https://github.com/DevCloudFE/matechat-react/commit/3869f9554a87df0925f61350753ead20876f93ec) Optimize behavior of `useChat`:
+
+  - Add `throwOnEmptyBackend` option to `useChat` function.
+  - Throw an error when `backend` is nullish and `throwOnEmptyBackend` is `true`.
+  - Rename `isPending`to`pending` in `useChat` return value.
+  - Allow empty `backend` in `useChat` function.
+
+### Refactors
+
+- [`162bad9`](https://github.com/DevCloudFE/matechat-react/commit/162bad95fc1277a259b7490a5d59e1baa93891fe) Extract all markdown components and resolve code lints.
+
+## \[0.1.0-beta.3]
+
+### Performance Improvements
+
+- [`b07439f`](https://github.com/DevCloudFE/matechat-react/commit/b07439f90089648ddd2f94d92a72dd818074af02) Default wrap `BubbleList` with `React.memo` to avoid extra rerender.
+
+## \[0.1.0-beta.2]
+
+### Bug Fixes
+
+- [`a11cb5d`](https://github.com/DevCloudFE/matechat-react/commit/a11cb5d57b0cf83ed7cdd07e60c276d75843df95) Enforce some styles for `Sender` component.
+
+## \[0.1.0-beta.1]
+
+### Performance Improvements
+
+- [`57077a8`](https://github.com/DevCloudFE/matechat-react/commit/57077a8439a97bed327668bc6f2be3bb630c2749) Optimize performance of `BubbleList` component, avoid extra rerender overheads.
+
 ## \[0.1.0-beta.0]
 
 ### Refactors
