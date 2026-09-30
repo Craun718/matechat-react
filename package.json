@@ -74,7 +74,7 @@
     "@vitejs/plugin-react-swc": "^3.11.0",
     "archons": "^0.2.13",
     "chalk": "^5.5.0",
-    "happy-dom": "^18.0.1",
+    "happy-dom": "^20.8.9",
     "lucide-react": "^0.536.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
